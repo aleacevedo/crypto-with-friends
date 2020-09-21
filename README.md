@@ -10,7 +10,7 @@ This contract let you put some money with your friends and keep straight account
 
 ### Deposit
 
-Every friend can deposit every amount of token at any moment and that will be recorded for later use partition.
+Every friend can deposit any amount of token at any moment and that will be recorded for later partition.
 
 ### Invest
 
