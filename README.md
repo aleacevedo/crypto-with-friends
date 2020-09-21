@@ -27,6 +27,6 @@ All the money is withdrawed from yVault and distributed included not invested mo
 
 ## TODO
 
-Find the way to reward the owner because of the gas spended at invest and withdrawAll
+Find a way to reward the owner for the gas spent by invest and withdrawAll
 
 
