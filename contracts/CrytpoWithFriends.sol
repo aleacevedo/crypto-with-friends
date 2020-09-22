@@ -51,15 +51,15 @@ contract CrytpoWithFriends is FriendFactory {
         require(totalAvailable > minInvest, "minInvset");
         token.approve(yVault, totalAvailable);
         vault.deposit(totalAvailable);
-        _invested(vault.balanceOf(address(this)));
+        _invested(vault.balanceOf(address(this)).sub(totalYBalance));
     }
 
-    function _invested(uint256 _share) private {
-        totalYBalance = totalYBalance.add(share);
+    function _invested(uint256 _newShare) private {
+        totalYBalance = totalYBalance.add(_newShare);
         for (uint256 index; index < friends.length; index++) {
             uint256 _percentage = friends[index].available.div(totalAvailable);
             friends[index].yBalance = friends[index].yBalance.add(
-                _percentage.mul(_share)
+                _newShare.mul(_percentage)
             );
             friends[index].available = 0;
         }
